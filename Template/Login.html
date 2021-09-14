@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Login</title>
+        
+        <link href="loginstyle.css" rel="stylesheet" type="text/css" />
+    <a href="home.html"></a>
+
+
+<script type="text/javascript">
+function login(){
+    debugger;
+var name = document.getElementById("txtUsername").value;
+localStorage.setItem('objectToPass',name);
+
+var pass=document.getElementById("txtPassword").value;
+if ((name&& pass) == ""){
+document.getElementById("showmsg").style.color="#ff0000" ;
+document.getElementById("showmsg").style.display="block";
+
+
+}
+else{
+
+window.location.href="home.html";
+
+}}
+
+function cancel(){
+    document.getElementById("showmsg").style.display="none";
+}
+
+
+
+
+
+
+    
+</script>
+
+
+    </head>
+    <body>
+
+        <div class="box">
+            <h2>Login</h2>
+            <form>
+                <div class="inputBox">
+                    <label>Username</label>
+    
+                    <input type="text" id="txtUsername" />
+                </div>
+                <div class="inputBox">
+                    <label>Password</label>
+    
+                    <input type="password" id="txtPassword" />
+                </div>
+                <input type="button" value="Sign In" onclick="login()" />
+            </form>
+            <div class="hideBox" id="showmsg">
+                <label>Please Enter Username & Password</label>
+                <img src="C:\Users\winows\Desktop\JavaScript-Task-2-master\Template\Images\Icons\Close.png " width="20" onclick="cancel(this)" />
+            </div>
+        </div>
+
+    </body>
+</html>
